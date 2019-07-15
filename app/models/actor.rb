@@ -10,10 +10,9 @@ class Actor < ActiveRecord::Base
   
   
   def list_roles 
-  
-  #find actor_id from shows and from characters and join together?
-
-
+    characters.map do |e|
+        "#{e.name}" + " - " + "#{e.show.name}"  
+    end
   end
   
 end
